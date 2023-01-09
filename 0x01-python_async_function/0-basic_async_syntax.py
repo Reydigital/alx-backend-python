@@ -12,32 +12,28 @@ import asyncio
 
 import random
 
-wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 
-print(asyncio.run(wait_random()))
 
-print(asyncio.run(wait_random(5)))
+async def wait_random(max_delay: int = 10) -> float:
 
-print(asyncio.run(wait_random(15)))
+        """
 
- """
+            Args:
 
-     Args:
+                    max_delay: The maximum random time generated.
 
-             max_delay: The maximum random time generated.
+                        Returns:
 
-                 Returns:
+                                The random generated value between 0 and max_delay.
 
-                         The random generated value between 0 and max_delay.
+                                    """
 
-                             """
+                                        rand: float = random.uniform(0, max_delay)
 
-                                 rand: float = random.uniform(0, max_delay)
-
-                                     await asyncio.sleep(rand)
+                                            await asyncio.sleep(rand)
 
 
 
-                                         return rand
+                                                return rand
