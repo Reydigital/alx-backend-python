@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 
-"""
-
-This module contains an asynchronous coroutine.
-
-"""
-
-
+""" Basic syntax await async """
 
 import asyncio
 
@@ -20,20 +14,20 @@ async def wait_random(max_delay: int = 10) -> float:
 
         """
 
-            Args:
+                Args:
 
-                    max_delay: The maximum random time generated.
+                            max_delay: max wait
 
-                        Returns:
+                                    Return:
 
-                                The random generated value between 0 and max_delay.
+                                                float time random
 
-                                    """
+                                                    """
 
-                                        rand: float = random.uniform(0, max_delay)
+                                                        delay: float = random.uniform(0, max_delay)
 
-                                            await asyncio.sleep(rand)
+                                                            await asyncio.sleep(delay)
 
 
 
-                                                return rand
+                                                                return delay
