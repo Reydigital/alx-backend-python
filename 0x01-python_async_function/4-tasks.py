@@ -1,41 +1,17 @@
 #!/usr/bin/env python3
 
-"""
 
-This module contains an asynchronous coroutine.
 
-"""
+import asyncio
 
 
 
-from typing import List
-
-from asyncio import gather
+task_wait_n = __import__('4-tasks').task_wait_n
 
 
 
-wait_random = __import__('3-tasks').task_wait_random
+n = 5
 
+max_delay = 6
 
-
-
-
-async def task_wait_n(n: int, max_delay: int) -> List[float]:
-
-        """
-
-            Args:
-
-                    n: The number of times to generate a random value.
-
-                            max_delay: The maximum random time generated.
-
-                                Returns:
-
-                                        The random generated values list.
-
-                                            """
-
-
-
-                                                return sorted(await gather(*[wait_random(max_delay) for i in range(n)]))
+print(asyncio.run(task_wait_n(n, max_delay)))
